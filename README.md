@@ -7,3 +7,5 @@ This project synthesizes various software services to build a callable AI voice 
 * Language Model: Respond to user input to obtain booking and contact information
 * Text-to-speech: Relay language model's output back to Twilio phone call with Deepgram TTS model
 * Confirmation email: Follow-up email sent to caller summarizing booking information with SendGrid
+
+`Test of code`
