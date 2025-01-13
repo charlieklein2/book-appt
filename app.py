@@ -13,11 +13,6 @@ from email.message import EmailMessage
 
 from twilio.rest import Client
 
-import logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
-logger.info("Starting WebSocket server...")
-
 load_dotenv()
 DEEPGRAM_API_KEY = os.getenv('DEEPGRAM_API_KEY')
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
@@ -45,7 +40,7 @@ async def generate_response(prompt, entire_transcript):
 	instruction = INSTRUCTION_PROMPT_RESPONSE
 
 	openai.api_key = OPENAI_API_KEY
-	response = openai.ChatCompletion.create(
+	response = openai.chat.completions.create(
 		model = "gpt-4o",
 		messages = [
 			{"role": "system", "content": instruction + entire_transcript},
@@ -61,7 +56,7 @@ async def generate_response(prompt, entire_transcript):
 async def generate_and_send_summary(entire_transcript):
 
 	openai.api_key = OPENAI_API_KEY
-	response = openai.ChatCompletion.create(
+	response = openai.chat.completions.create(
 		model = "gpt-4o",
 		messages = [
 			{"role": "system", "content": INSTRUCTION_PROMPT_SUMMARY},
@@ -74,7 +69,7 @@ async def generate_and_send_summary(entire_transcript):
 
 	summary = response.choices[0].message.content
 
-	response2 = openai.ChatCompletion.create(
+	response2 = openai.chat.completions.create(
 		model = "gpt-4o",
 		messages = [
 			{"role": "system", "content": "Given the entire transcript, extract only the email address of the caller."},
