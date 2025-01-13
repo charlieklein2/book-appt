@@ -1,6 +1,6 @@
 # Callable AI Voice Agent
 ### Overview
-This project synthesizes various software services to build a callable AI voice agent to simulate booking an appointment. To demo this project, call +1(844)823-0395.
+This project synthesizes various software services to build a callable AI voice agent to simulate booking an appointment. To demo yourself this project, please contact charlesklein@berkeley.edu.
 ### Design
 * Telephone Service: Twilio phone number configured to handle incoming calls
 * Speech-to-text: Real-time speech recognition with Deepgram STT model
