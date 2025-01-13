@@ -250,7 +250,7 @@ async def proxy(client_ws):
 
 
 def main():
-	server = websockets.serve(proxy, "localhost", 5000)
+	server = websockets.serve(proxy, "0.0.0.0", 5000)
 
 	asyncio.get_event_loop().run_until_complete(server)
 	asyncio.get_event_loop().run_forever()
