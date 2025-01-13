@@ -8,5 +8,5 @@ This project synthesizes various software services to build a callable AI voice 
 * Text-to-speech: Relay language model's output back to Twilio phone call with Deepgram TTS model
 * Confirmation email: Follow-up email sent to caller summarizing booking information with SendGrid
 ### Demo
-A recorded demo of this project can be viewed [https://berkeley.zoom.us/rec/share/JyKY7V2fvhIoehDUfx4mO8OEP4m5XhhAX6BzG9QapmT4qZhn1WxDwF_-qfpQkuGo.sOZe6emJaZ33GdBa?startTime=1736747578000
-Passcode: E4T*J=+2](here)
+A recorded demo of this project can be viewed [here](https://berkeley.zoom.us/rec/share/JyKY7V2fvhIoehDUfx4mO8OEP4m5XhhAX6BzG9QapmT4qZhn1WxDwF_-qfpQkuGo.sOZe6emJaZ33GdBa?startTime=1736747578000
+Passcode: E4T*J=+2)
