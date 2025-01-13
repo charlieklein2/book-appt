@@ -13,6 +13,11 @@ from email.message import EmailMessage
 
 from twilio.rest import Client
 
+import logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+logger.info("Starting WebSocket server...")
+
 load_dotenv()
 DEEPGRAM_API_KEY = os.getenv('DEEPGRAM_API_KEY')
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
@@ -250,7 +255,8 @@ async def proxy(client_ws):
 
 
 def main():
-	server = websockets.serve(proxy, "0.0.0.0", 5000)
+	port = int(os.getenv("PORT", 5000))  # Default to 5000 for local testing
+	server = websockets.serve(proxy, "0.0.0.0", port)
 
 	asyncio.get_event_loop().run_until_complete(server)
 	asyncio.get_event_loop().run_forever()
